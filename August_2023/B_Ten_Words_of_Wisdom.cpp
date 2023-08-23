@@ -2,11 +2,11 @@
 #include<map>
 using namespace std;
 
-void ans()
+int ans()
 {
     int n;cin>>n;
     map<int, int> wisdom;
-    map<int, int>::iterator it;
+    //map<int, int>::iterator it;
     int mayor = 0;
 
     while(n > 0)
@@ -21,17 +21,23 @@ void ans()
         n--;
     }
 
+    int ans = distance(wisdom.begin(), wisdom.find(mayor)) + 1;
+    return ans;
+    /*
     it = wisdom.find(mayor);
-    cout<<it -> first<<endl;
+    cout<<it -> first<<endl;*/
 }
 
 int main()
 {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int t;cin>>t;
     while(t > 0)
     {
-        ans();
+        cout<<ans()<<endl;
         t--;
     }
     return 0;
 }
+//No salio XD
