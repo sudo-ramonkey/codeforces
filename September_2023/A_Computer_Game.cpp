@@ -1,15 +1,21 @@
 #include<iostream>
 using namespace std;
 
-void ans()
+string ans()
 {
+    int n;cin>>n;//n cols
 
+    return "NO";
 }
 
 int main()
 {
-    std::sync_with_stdio(0);
+    ios::sync_with_stdio(0);
     cin.tie(0);
-    ans();
+    int t;cin>>t;
+    while(t-- > 0)
+    {
+        cout<<ans()<<"\n";
+    }
     return 0;
 }
