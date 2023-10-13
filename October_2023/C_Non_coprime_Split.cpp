@@ -12,7 +12,7 @@ void ans()
 {
     int l;cin>>l;
     int r;cin>>r;
-    
+    //gcd
     cout<<-1<<"\n";
 }
 
