@@ -1,5 +1,6 @@
 #include<iostream>
 #include<map>
+#include<set>
 using namespace std;
 
 #define ar array
@@ -9,6 +10,16 @@ using namespace std;
 
 
 const int MAX_N = 1e5 + 5;
+
+string construir_aux(set<char> st)
+{
+    string str = "";
+    for(auto c : st)
+    {
+        str += c;
+    }
+    return str;
+}
 
 string ans()
 {
@@ -30,11 +41,13 @@ string ans()
         char aux = h[i];
         mp2[aux]++;
     }
-
+    
+    string aux = construir_aux(st);
     int contador = 0;
-    for(int i = 0; i < p.size();i++)
+
+    for(int i = 0; i < aux.size();i++)
     {
-        if(mp[st.back()] == mp2[st.back()])
+        if(mp[aux[i]] == mp2[aux[i]])
         {
             contador++;
         }
