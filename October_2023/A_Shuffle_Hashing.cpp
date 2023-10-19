@@ -1,6 +1,6 @@
 #include<iostream>
-#include<map>
-#include<set>
+#include<string>
+#include<algorithm>
 using namespace std;
 
 #define ar array
@@ -8,10 +8,9 @@ using namespace std;
 #define ld long double
 #define all(v) (v.begin(), v.end());
 
-
 const int MAX_N = 1e5 + 5;
 
-string construir_aux(set<char> st)
+/*string construir_aux(set<char> st)
 {
     string str = "";
     for(auto c : st)
@@ -59,6 +58,72 @@ string ans()
     }
 
     return "NO";
+}*/
+
+string equalSize(string p, string h)
+{
+    sort(p.begin(), p.end());
+    sort(h.begin(), h.end());
+    if(h == p)
+    {
+        return "YES";
+    }
+    return "NO";
+}
+
+string equalDif(string p, string h, int dif)
+{
+    int howMany = dif / 2;
+    string aux = "";
+    for(int i = howMany; i < h.size()-howMany;i++)
+    {
+        aux += h[i];   
+    }
+    sort(p.begin(), p.end());
+    sort(aux.begin(), aux.end());
+    if(p == aux)
+    {
+        return "YES";
+    }
+    return "NO";
+}
+
+string oddDif(string p, string h, int dif)
+{
+
+    return "NO";
+}
+
+string ans2()
+{
+    string p;cin>>p;
+    string h;cin>>h;
+    int lengthP = p.size();
+    int lengthH = h.size();
+    int dif = lengthH - lengthP;
+
+    if(lengthP > lengthH)
+    {
+        return "NO";
+    }
+
+    if(lengthP == lengthH)
+    {
+        return equalSize(p, h);
+    }
+
+    if(dif % 2 == 0)
+    {
+        return equalDif(p, h, dif);
+    }
+
+    if(dif % 2 != 0)
+    {
+        return oddDif(p, h, dif);
+    }
+
+    
+    return "NO";
 }
 
 int main()
@@ -68,7 +133,7 @@ int main()
     int t;cin>>t;
     while(t-- > 0)
     {
-        cout<<ans()<<"\n";
+        cout<<ans2()<<"\n";
     }
     return 0;
 }
