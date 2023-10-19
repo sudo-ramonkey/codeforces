@@ -56,7 +56,6 @@ string ans()
     {
         return "YES";
     }
-
     return "NO";
 }*/
 
@@ -90,7 +89,23 @@ string equalDif(string p, string h, int dif)
 
 string oddDif(string p, string h, int dif)
 {
-
+    int howMany = dif / 2;
+    howMany++;
+    string aux = "";
+    sort(p.begin(), p.end());
+    for(int i = howMany; i < h.size();i++)
+    {
+        aux+=h[i];
+        sort(aux.begin(), aux.end());
+        if(aux == p)
+        {
+            i = h.size();
+        }
+    }
+    if(p == aux)
+    {
+        return "YES";
+    }
     return "NO";
 }
 
@@ -101,7 +116,6 @@ string ans2()
     int lengthP = p.size();
     int lengthH = h.size();
     int dif = lengthH - lengthP;
-
     if(lengthP > lengthH)
     {
         return "NO";
