@@ -7,8 +7,8 @@
 *:Difficulty: 1100
 */
 #include<iostream>
-#include<array>
-//#include<vector>
+//#include<array>
+#include<vector>
 //#include<algorithm>
 //#include<sets>
 //#include<map>
@@ -27,13 +27,12 @@ using namespace std;
 
 const int MAX_N = 1e5 + 5;
 
-int ans()
+/*int ans()
 {
     int n;cin>>n;//N pisos
     int s;cin>>s;//Oficina pos
     int k;cin>>k;//n pisos cerrados
     int arr [n];
-    int lsteps=-1;
 
     //pos abiertos
     for(int i = 0; i < n;i++)
@@ -41,33 +40,117 @@ int ans()
         arr[i] = 0;
     }
 
-    int aux = 0;
-    //pos cerrados
-    while(cin>>aux)
+    for(int i = 0; i < k;i ++)//pos cerrados
     {
-        arr[aux] = 1;
+        int aux;cin>>aux;
+        arr[aux - 1] = 1;
+    }
+
+    if(arr[s - 1] == 0)
+    {
+        return 0;
+    }
+
+    if(arr[s] == 0 || arr[s - 2] == 0)
+    {
+        return 1;
     }
     
-    
-    if(arr[s] == 0)
+    int l = 0;
+    int r = n - 1;
+    int steps = 0;
+    int mid = s - 1;
+
+    while(l <= r)
     {
-        return steps;
-    }
-    else
-    {
-        for(int i=s;i<0;i--)
+        if(arr[mid] == 0 && (mid == 1 || arr[mid - 1] == 1))
         {
-            if(arr[i]==0)
-            steps=i;
+            //cout<<arr[mid]<<" "<<mid<<"\n";
+            
             break;
+        }else if (arr[mid] == 1)
+        {
+            l = mid + 1;
+        }else{
+            r = mid - 1;
         }
-        
+        mid = (l + r) / 2;
     }
+
+    int dif = max(s-1, mid) - min(s-1, mid);
+    return dif;
+}*/
+
+int ans()
+{
+    ll n;cin>>n;
+    ll s;cin>>s;
+    ll k;cin>>k;
+    vector<ll> arr (n, 0);
+
+    //pos abiertos
+    /*for(ll i = 0; i < n;i++)
+    {
+        arr[i] = 0;
+    }*/
+
+    for(ll i = 0; i < k;i ++)//pos cerrados
+    {
+        ll aux;cin>>aux;
+        arr[aux - 1] = 1;
+    }
+
     
+    
+    ll min = MAX_N;
+    ll si = s - 1;
 
+    if(arr[si] == 0)
+    {
+        return 0;
+    }
 
+    for(ll i = 0; i < si; i++)
+    {
+        if(arr[i] == 0 && i < si)
+        {
+            if(si - i < min)
+            {
+                min = si - i;
+            }
+        }else if(arr[i] == 0 && i > si)
+        {
+            if(i - si < min)
+            {
+                min = i - si;
+            }
+        }else if(arr[i] == 0 && i == si)
+        {
+            min = i;
+        }
+    }
 
-    return steps;
+    for(ll i = si; i < n; i++)
+    {
+        if(arr[i] == 0 && i < si)
+        {
+            if(si - i < min)
+            {
+                min = si - i;
+            }
+        }else if(arr[i] == 0 && i > si)
+        {
+            if(i - si < min)
+            {
+                min = i - si;
+            }
+        }else if(arr[i] == 0 && i == si)
+        {
+            min = i;
+        }
+    }
+
+    return min;
 }
 
 int main()
