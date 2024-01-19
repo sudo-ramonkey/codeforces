@@ -1,14 +1,14 @@
 /*
 *:astroprieto
-*:CodeForces Round: Educational 63
+*:CodeForces Round: 773
 *:Div: 2
-*:Problem: A. Reverse a Substring
-*:Tags: implementation, sortings, strings
-*:Difficulty: 1000
+*:Problem: B. Power Walking
+*:Tags: Greedy
+*:Difficulty: 900
 */
 #include<iostream>
 //#include<array>
-//#include<vector>
+#include<vector>
 //#include<algorithm>
 //#include<sets>
 //#include<maps>
@@ -27,9 +27,16 @@ using namespace std;
 
 const int MAX_N = 1e5 + 5;
 
-void ans()
+int ans()
 {
-    debug
+    int n;cin>>n;
+    vector<int> v;//powerups
+    int aux = 0;
+    while(cin>>aux)
+    {
+        v.pb(aux);
+    }
+
 }
 
 int main()
@@ -39,7 +46,7 @@ int main()
     int t;cin>>t;
     while(t-- > 0)
     {
-        ans();
+        cout<<ans()<<endl;
     }
     return 0;
-}
+} 

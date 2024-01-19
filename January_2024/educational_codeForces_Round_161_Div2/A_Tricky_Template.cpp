@@ -1,10 +1,10 @@
 /*
 *:astroprieto
-*:CodeForces Round: Educational 63
-*:Div: 2
-*:Problem: A. Reverse a Substring
-*:Tags: implementation, sortings, strings
-*:Difficulty: 1000
+*:CodeForces Round:
+*:Div:
+*:Problem:
+*:Tags:
+*:Difficulty:
 */
 #include<iostream>
 //#include<array>
@@ -29,7 +29,12 @@ const int MAX_N = 1e5 + 5;
 
 void ans()
 {
-    debug
+    int n;cin>>n;
+    string a;cin>>a;
+    string b;cin>>b;
+    string c;cin>>c;
+
+
 }
 
 int main()
@@ -42,4 +47,4 @@ int main()
         ans();
     }
     return 0;
-}
+} 
