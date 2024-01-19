@@ -1,10 +1,10 @@
 /*
 *:astroprieto
-*:CodeForces Round:
-*:Div:
-*:Problem:
-*:Tags:
-*:Difficulty:
+*:CodeForces Round: 905
+*:Div: 3
+*:Problem: B. Chemestry
+*:Tags: Strings
+*:Difficulty: 900
 */
 #include<iostream>
 #include<array>
@@ -59,10 +59,20 @@ void showVector(vector<int> v)
     cout<<"\n";
 }
 
-
-void ans()
+bool esPalindromo(string s)
 {
+    if(l(s) % 2 == 0)
+    {
 
+    }else{
+
+    }
+}
+
+string ans()
+{
+    
+    return "YES";
 }
 
 int main()
@@ -72,7 +82,7 @@ int main()
     int t;cin>>t;
     while(t-- > 0)
     {
-        ans();
+        cout<<ans()<<"\n";
     }
     return 0;
 } 
