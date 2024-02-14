@@ -43,7 +43,7 @@ const int MAX_N = 1e5 + 5;
 
 void showArray(int arr[], int size)
 {
-    rep(0, size-1)
+    rep(0, size)
     {
         cout<<arr[i];
     }
@@ -60,19 +60,27 @@ void showVector(vector<int> v)
 }
 
 
-void ans()
+string ans()
 {
+    int n;cin>>n;
+    int bin[n];
 
+    rep(0, n)
+    {
+        cin>>bin[i];
+        if(bin[i] == 1)
+        {
+            return "HARD";
+        }
+    }
+    return "EASY";
 }
 
 int main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int t;cin>>t;
-    while(t-- > 0)
-    {
-        ans();
-    }
+    cout<<ans()<<"\n";
     return 0;
 } 
+

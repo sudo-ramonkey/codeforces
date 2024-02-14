@@ -1,10 +1,10 @@
 /*
 *:astroprieto
-*:CodeForces Round: 
-*:Div: 
-*:Problem: 
-*:Tags: 
-*:Difficulty:
+*:CodeForces Round: 909
+*:Div: 3
+*:Problem: B. 250 Thousand Tons of TNT https://codeforces.com/problemset/problem/1899/B
+*:Tags: Brute Force, Implementation, Number Theory
+*:Difficulty: 1100
 */
 #include<iostream>
 #include<array>
@@ -30,7 +30,7 @@ using namespace std;
 #define l(s) s.size()
 #define all(v) v.begin(), v.end()
 #define array_size(arr) sizeof(arr)/sizeof(arr[0])
-#define rep(ini, fin) for(int i = ini;i < (fin);i++)
+#define rep(i, a, b) for(ll i = a;i < (b);i++)
 #define trav(a, x) for(auto& a: x)
 #define PI acos(-1)
 #define MOD 1000000007
@@ -41,9 +41,9 @@ using namespace std;
 
 const int MAX_N = 1e5 + 5;
 
-void showArray(int arr[], int size)
+void showArray(int arr[])
 {
-    rep(0, size-1)
+    rep(i, 0, array_size(arr))
     {
         cout<<arr[i];
     }
@@ -62,7 +62,24 @@ void showVector(vector<int> v)
 
 void ans()
 {
+   ll n;cin>>n;//n boxes
+   vector<ll> v;
 
+   int total = 0;
+   rep(i, 0, n)
+   {
+        int aux;cin>>aux;
+        v.pb(aux);
+        total += aux;
+   }  
+   ll maximusWeight = *max_element(all(v));
+   ll minimusWeigth = *min_element(all(v));
+   ll resul = maximusWeight - minimusWeigth;
+
+   cout<<"Max: "<<maximusWeight<<endl;
+   cout<<"Min: "<<minimusWeigth<<endl;
+   cout<<"Total: "<<total<<endl;
+   cout<<resul<<endl;
 }
 
 int main()

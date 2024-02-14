@@ -8,6 +8,7 @@
 */
 #include<iostream>
 #include<array>
+#include <iterator>
 #include<vector>
 #include<algorithm>
 #include<set>
@@ -60,19 +61,20 @@ void showVector(vector<int> v)
 }
 
 
-void ans()
+int ans()
 {
+    //Domino size: 2 x 1
+   int n;cin>>n;//length
+   int m;cin>>m;//height
 
+   return (n * m) / 2;
 }
 
 int main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int t;cin>>t;
-    while(t-- > 0)
-    {
-        ans();
-    }
+    cout<<ans()<<endl;
     return 0;
 } 
+

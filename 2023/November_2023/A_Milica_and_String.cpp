@@ -1,10 +1,10 @@
 /*
 *:astroprieto
-*:CodeForces Round: 
-*:Div: 
-*:Problem: 
-*:Tags: 
-*:Difficulty:
+*:CodeForces Round: 910
+*:Div: 2
+*:Problem: A. Milica and String
+*:Tags: Brute Force, Implementation, Strings
+*:Difficulty: 800
 */
 #include<iostream>
 #include<array>
@@ -41,9 +41,9 @@ using namespace std;
 
 const int MAX_N = 1e5 + 5;
 
-void showArray(int arr[], int size)
+void showArray(int arr[])
 {
-    rep(0, size-1)
+    rep(0, array_size(arr))
     {
         cout<<arr[i];
     }
@@ -62,6 +62,16 @@ void showVector(vector<int> v)
 
 void ans()
 {
+    int n;cin>>n;//length string
+    int k;cin>>k;//number of Character B Milica
+    vector<char> s;
+    string aux; cin>>aux;
+
+    rep(0, n)
+    {
+        s.pb(aux[i]);
+    }
+
 
 }
 
