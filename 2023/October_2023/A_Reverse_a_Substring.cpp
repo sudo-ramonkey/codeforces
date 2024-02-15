@@ -1,10 +1,10 @@
 /*
 *:astroprieto
-*:CodeForces Round:
-*:Div:
-*:Problem:
-*:Tags:
-*:Difficulty:
+*:CodeForces Round: Educational 63
+*:Div: 2
+*:Problem: A. Reverse a Substring
+*:Tags: implementation, sortings, strings
+*:Difficulty: 1000
 */
 #include<iostream>
 //#include<array>

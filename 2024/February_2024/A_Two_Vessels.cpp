@@ -8,6 +8,7 @@
 */
 #include<iostream>
 #include<array>
+#include <iterator>
 #include<vector>
 #include<algorithm>
 #include<set>
@@ -60,9 +61,39 @@ void showVector(vector<int> v)
 }
 
 
-void ans()
+auto ans()
 {
+    int ans = 0;
+    double a;cin>>a;
+    double b;cin>>b; 
+    double c;cin>>c;//Max capacity
+    if(a == b)
+    {
+        return 0;
+    }
 
+    double mayor = 0;
+    double menor = 0;
+    
+    if(a > b)
+    {
+        mayor = a;
+        menor = b;
+    }else{
+        mayor = b;
+        menor = a;
+    }
+    
+    double diff = mayor - menor;
+    
+
+
+    if(mayor - c == menor || menor + c == mayor)
+    {
+        return 1;
+    }
+
+    return ans;
 }
 
 int main()
@@ -72,7 +103,7 @@ int main()
     int t;cin>>t;
     while(t-- > 0)
     {
-        ans();
+        cout<<ans()<<"\n";
     }
     return 0;
 } 
