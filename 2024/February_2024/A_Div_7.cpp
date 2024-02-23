@@ -8,7 +8,6 @@
 */
 #include<iostream>
 #include<array>
-#include <iterator>
 #include<vector>
 #include<algorithm>
 #include<set>
@@ -61,23 +60,25 @@ void showVector(vector<int> v)
 }
 
 
-double ans()
+int ans()
 {
-    double ans = 0;
-    int a;cin>>a;
-    int b;cin>>b; 
-    int c;cin>>c;//Max capacity
-    
-    if(a == b)
+    int n;cin>>n;
+    if(n % 7 == 0)
     {
-        return ans;
+        return n;
     }
 
-    ans = max(a, b) - min(a, b);
-    ans /= 2;
-    ans /= c;
+    for(int i = 0; i < 10;i++)
+    {
+        n -= n % 10;
+        n += i;
+        if(n % 7 == 0)
+        {
+            return n;
+        }
+    }
 
-    return ceil(ans);
+    return -1;
 }
 
 int main()
@@ -87,7 +88,7 @@ int main()
     int t;cin>>t;
     while(t-- > 0)
     {
-        cout<<ans()<<"\n";
+        cout<<ans()<<'\n';
     }
     return 0;
 } 

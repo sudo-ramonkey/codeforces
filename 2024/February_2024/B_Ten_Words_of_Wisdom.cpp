@@ -8,7 +8,6 @@
 */
 #include<iostream>
 #include<array>
-#include <iterator>
 #include<vector>
 #include<algorithm>
 #include<set>
@@ -55,29 +54,45 @@ void showVector(vector<int> v)
 {
     trav(a, v)
     {
-        cout<<a;
+        cout<<a<<' ';
     }
     cout<<"\n";
 }
 
 
-double ans()
+int ans()
 {
-    double ans = 0;
-    int a;cin>>a;
-    int b;cin>>b; 
-    int c;cin>>c;//Max capacity
-    
-    if(a == b)
+    int n;cin>>n;//n responses
+    int nAux = n;
+    vector<int> qual(n, 0);
+    int res = 0;
+
+    while(n-- > 0)
     {
-        return ans;
+        int a;cin>>a;//n words
+        int b;cin>>b;//quality word
+        if(a < 11)
+        {
+            qual[res] = b;
+        }else{
+            qual[res] = -1;
+        }
+        res++;
     }
 
-    ans = max(a, b) - min(a, b);
-    ans /= 2;
-    ans /= c;
+    int highestQuality = 1;
+    int ans = 0;
+    
+     for(int i = 0; i < nAux;i++)
+     {
+        if(qual[i] > highestQuality)
+        {
+            highestQuality = qual[i];
+            ans = i;
+        }
+     }
 
-    return ceil(ans);
+     return ans+1;
 }
 
 int main()
@@ -87,7 +102,7 @@ int main()
     int t;cin>>t;
     while(t-- > 0)
     {
-        cout<<ans()<<"\n";
+        cout<<ans()<<'\n';
     }
     return 0;
 } 
